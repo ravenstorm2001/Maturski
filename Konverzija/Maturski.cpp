@@ -2,203 +2,203 @@
 
 using namespace std;
 
-string unos;
-int kolona;
+string input;
+int column;
 
 int main()
 {
     ifstream in ("3D structures.sdf");
     ofstream out("drugs.csv");
     out << "<DATABASE_ID>,<DATABASE_NAME>,<MOLECULAR_WEIGHT>,<JCHEM_ACCEPTOR_COUNT>,<JCHEM_AVERAGE_POLARIZABILITY>,<JCHEM_DONOR_COUNT>,<JCHEM_FORMAL_CHARGE>,<JCHEM_LOGP>,<JCHEM_NUMBER_OF_RINGS>,<JCHEM_PHYSIOLOGICAL_CHARGE>,<JCHEM_PKA>,<JCHEM_PKA_STRONGEST_ACIDIC>,<JCHEM_PKA_STRONGEST_BASIC>,<JCHEM_POLAR_SURFACE_AREA>,<JCHEM_REFRACTIVITY>,<JCHEM_ROTATABLE_BOND_COUNT>,<DRUGBANK_ID>" << endl;
-    while(in >> unos)
+    while(in >> input)
     {
-        if(unos=="END")
+        if(input=="END")
         {
-            kolona=0;
-            while(in >> unos)
+            column=0;
+            while(in >> input)
             {
-                if(unos=="$$$$")
+                if(input=="$$$$")
                     break;
-                if(unos=="<DATABASE_ID>")
+                if(input=="<DATABASE_ID>")
                 {
-                    in >> unos;
-                    out << unos << ",";
-                    kolona++;
+                    in >> input;
+                    out << input << ",";
+                    column++;
                 }
-                if(unos=="<DATABASE_NAME>")
+                if(input=="<DATABASE_NAME>")
                 {
-                    if(kolona!=1)
+                    if(column!=1)
                         {
                             out << ",";
-                            kolona++;
+                            column++;
                         }
-                    in >> unos;
-                    out << unos << ",";
-                    kolona++;
+                    in >> input;
+                    out << input << ",";
+                    column++;
                 }
-                if(unos=="<MOLECULAR_WEIGHT>")
+                if(input=="<MOLECULAR_WEIGHT>")
                 {
                     if(kolona!=2)
                         {
                             out << ",";
-                            kolona++;
+                            column++;
                         }
-                    in >> unos;
-                    out << unos << ",";
-                    kolona++;
+                    in >> input;
+                    out << input << ",";
+                    column++;
                 }
-                if(unos=="<JCHEM_ACCEPTOR_COUNT>")
+                if(input=="<JCHEM_ACCEPTOR_COUNT>")
                 {
-                    if(kolona!=3)
+                    if(column!=3)
                         {
                             out << ",";
-                            kolona++;
+                            column++;
                         }
-                    in >> unos;
-                    out << unos << ",";
-                    kolona++;
+                    in >> input;
+                    out << input << ",";
+                    column++;
                 }
-                if(unos=="<JCHEM_AVERAGE_POLARIZABILITY>")
+                if(input=="<JCHEM_AVERAGE_POLARIZABILITY>")
                 {
-                    if(kolona!=4)
+                    if(column!=4)
                         {
                             out << ",";
-                            kolona++;
+                            column++;
                         }
-                    in >> unos;
-                    out << unos << ",";
-                    kolona++;
+                    in >> input;
+                    out << input << ",";
+                    column++;
                 }
-                if(unos=="<JCHEM_DONOR_COUNT>")
+                if(input=="<JCHEM_DONOR_COUNT>")
                 {
-                    if(kolona!=5)
+                    if(column!=5)
                         {
                             out << ",";
-                            kolona++;
+                            column++;
                         }
-                    in >> unos;
-                    out << unos << ",";
-                    kolona++;
+                    in >> input;
+                    out << input << ",";
+                    column++;
                 }
-                if(unos=="<JCHEM_FORMAL_CHARGE>")
+                if(input=="<JCHEM_FORMAL_CHARGE>")
                 {
-                    if(kolona!=6)
+                    if(column!=6)
                         {
                             out << ",";
-                            kolona++;
+                            column++;
                         }
-                    in >> unos;
-                    out << unos << ",";
-                    kolona++;
+                    in >> input;
+                    out << input << ",";
+                    column++;
                 }
-                if(unos=="<JCHEM_LOGP>")
+                if(input=="<JCHEM_LOGP>")
                 {
-                    if(kolona!=7)
+                    if(column!=7)
                         {
                             out << ",";
-                            kolona++;
+                            column++;
                         }
-                    in >> unos;
-                    out << unos << ",";
-                    kolona++;
+                    in >> input;
+                    out << input << ",";
+                    column++;
                 }
-                if(unos=="<JCHEM_NUMBER_OF_RINGS>")
+                if(input=="<JCHEM_NUMBER_OF_RINGS>")
                 {
-                    if(kolona!=8)
+                    if(column!=8)
                         {
                             out << ",";
-                            kolona++;
+                            column++;
                         }
-                    in >> unos;
-                    out << unos << ",";
-                    kolona++;
+                    in >> input;
+                    out << input << ",";
+                    column++;
                 }
-                if(unos=="<JCHEM_PHYSIOLOGICAL_CHARGE>")
+                if(input=="<JCHEM_PHYSIOLOGICAL_CHARGE>")
                 {
-                    if(kolona!=9)
+                    if(column!=9)
                         {
                             out << ",";
-                            kolona++;
+                            column++;
                         }
-                    in >> unos;
-                    out << unos << ",";
-                    kolona++;
+                    in >> input;
+                    out << input << ",";
+                    column++;
                 }
-                if(unos=="<JCHEM_PKA>")
+                if(input=="<JCHEM_PKA>")
                 {
-                    if(kolona!=10)
+                    if(columna!=10)
                         {
                             out << ",";
-                            kolona++;
+                            column++;
                         }
-                    in >> unos;
-                    out << unos << ",";
-                    kolona++;
+                    in >> input;
+                    out << input << ",";
+                    column++;
                 }
-                if(unos=="<JCHEM_PKA_STRONGEST_ACIDIC>")
+                if(input=="<JCHEM_PKA_STRONGEST_ACIDIC>")
                 {
-                    if(kolona!=11)
+                    if(column!=11)
                         {
                             out << ",";
-                            kolona++;
+                            column++;
                         }
-                    in >> unos;
-                    out << unos << ",";
-                    kolona++;
+                    in >> input;
+                    out << input << ",";
+                    column++;
                 }
-                if(unos=="<JCHEM_PKA_STRONGEST_BASIC>")
+                if(input=="<JCHEM_PKA_STRONGEST_BASIC>")
                 {
-                    if(kolona!=12)
+                    if(column!=12)
                         {
                             out << ",";
-                            kolona++;
+                            columna++;
                         }
-                    in >> unos;
-                    out << unos << ",";
-                    kolona++;
+                    in >> input;
+                    out << input << ",";
+                    column++;
                 }
-                if(unos=="<JCHEM_POLAR_SURFACE_AREA>")
+                if(input=="<JCHEM_POLAR_SURFACE_AREA>")
                 {
-                    if(kolona!=13)
+                    if(column!=13)
                         {
                             out << ",";
-                            kolona++;
+                            column++;
                         }
-                    in >> unos;
-                    out << unos << ",";
-                    kolona++;
+                    in >> input;
+                    out << input << ",";
+                    column++;
                 }
-                if(unos=="<JCHEM_REFRACTIVITY>")
+                if(input=="<JCHEM_REFRACTIVITY>")
                 {
-                    if(kolona!=14)
+                    if(column!=14)
                         {
                             out << ",";
-                            kolona++;
+                            column++;
                         }
-                    in >> unos;
-                    out << unos << ",";
-                    kolona++;
+                    in >> input;
+                    out << input << ",";
+                    column++;
                 }
-                if(unos=="<JCHEM_ROTATABLE_BOND_COUNT>")
+                if(input=="<JCHEM_ROTATABLE_BOND_COUNT>")
                 {
-                    if(kolona!=15)
+                    if(column!=15)
                         {
                             out << ",";
-                            kolona++;
+                            column++;
                         }
-                    in >> unos;
-                    out << unos << ",";
-                    kolona++;
+                    in >> input;
+                    out << input << ",";
+                    column++;
                 }
-                if(unos=="<DRUGBANK_ID>")
+                if(input=="<DRUGBANK_ID>")
                 {
-                    if(kolona!=16)
+                    if(column!=16)
                         {
                             out << ",";
-                            kolona++;
+                            column++;
                         }
-                    in >> unos;
-                    out << unos << endl;
+                    in >> input;
+                    out << input << endl;
                 }
             }
         }
